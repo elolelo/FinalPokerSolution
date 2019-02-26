@@ -3,6 +3,11 @@ This is the dev skill test from Inclusitity Solution
 
 About this solution: This program will accept text input (of playing  Poker game cards ) then evaluates what the best poker hand could be constructed with the cards.
 
+ 
+Assumptions made:
+
+1. Not accounting for ace-to-five low rules
+
 
 
 Steps:
@@ -28,8 +33,4 @@ Steps:
       8.2. Closed match should meet the specific rank definition
           8.3. If it is met, then return that rank's value
      
- 
-Assumptions made:
-
-1. Not accounting for ace-to-five low rules
 
