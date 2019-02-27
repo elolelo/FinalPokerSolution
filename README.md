@@ -9,11 +9,13 @@ Assumptions made:
 
 0. User will input the card one at the time
 
-1. The card 10 is assumed to be T - so for 10S (10 of spades)  = TS
+1. The entered user input always starts with a rank then a suit e.g : 2H = 2 of hearts
 
-2. S and s are interpreated as the samething - This program assumes case-insensitivity
+2. The card 10 is assumed to be T - so for 10S (10 of spades)  = TS
 
-3. Not accounting for ace-to-five low rules
+3. S and s are interpreated as the samething - This program assumes case-insensitivity
+
+4.Not accounting for ace-to-five low rules
 
 
 Steps:
