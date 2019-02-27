@@ -32,12 +32,19 @@ Steps:
   6.1 Test the methods to see if they meet current expectations
 
 7. Create ranking categories 
+
     7.1 Make each category accessible and avaible for evaluating the comparisons
-       7.2 Test this
+    
+    7.2 Test this
+    
 8. Use method/s to search and compare the the array from user to the value and suits arrays
+
     8.1 Loop through each element from each list/array to find best/ closest match 
+    
           ! Using the Java 8 comparator.comparing() 
+          
       8.2. Closed match should meet the specific rank definition
+      
           8.3. If it is met, then return that rank's value
      
 
