@@ -8,9 +8,12 @@ About this solution: This program will accept text input (of playing  Poker game
 Assumptions made:
 
 0. User will input the card one at the time
+
 1. The card 10 is assumed to be T - so for 10S (10 of spades)  = TS
+
 2. S and s are interpreated as the samething - This program assumes case-insensitivity
-3.Not accounting for ace-to-five low rules
+
+3. Not accounting for ace-to-five low rules
 
 
 Steps:
