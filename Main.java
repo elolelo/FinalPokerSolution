@@ -1,8 +1,12 @@
 import java.util.*;
 public class Main { 
 
+	// constants
+	static final char[] suits = {'H', 'D', 'C', 'S'};  
+    	static final String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"}; 
 
-	public static List<String> getCardsFromInput() {
+
+	public static List<String> getCardsFromInput() {  
       	
       	Scanner sc = new Scanner(System.in);
       		
