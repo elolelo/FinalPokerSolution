@@ -13,7 +13,7 @@ Assumptions made:
 
 2. The card 10 is assumed to be T - so for 10S (10 of spades)  = TS
 
-3. S and s are interpreated as the samething - This program assumes case-insensitivity
+3. This program is case -sensitive. Enter Upper cases only
 
 4.Not accounting for ace-to-five low rules
 
