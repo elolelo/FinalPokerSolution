@@ -15,7 +15,7 @@ Assumptions made:
 
 3. This program is case -sensitive. Enter Upper cases only
 
-4.Not accounting for ace-to-five low rules
+4. Not accounting for ace-to-five low rules
 
 
 Steps:
@@ -44,11 +44,11 @@ Steps:
     
 8. Use method/s to search and compare the the array from user to the value and suits arrays
 
-    8.1 Loop through each element from each list/array to find best/ closest match 
+    8.1 Loop through each element from each array tas list to find the best poker hand match 
     
           ! Using the Java 8 comparator.comparing() 
           
-      8.2. Closed match should meet the specific rank definition
+      8.2.Best Poker hand match should meet the specific rank definition
       
           8.3. If it is met, then return that rank's value
      
