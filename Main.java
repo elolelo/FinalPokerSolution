@@ -49,20 +49,20 @@ public class Main {
 	return inputCards;
 	}
 	
-	static class Card {     // this class is represents a card
+	static class Card {     // nested class is representing the  "card"
         final int suit;
         final int rank;
 
-        Card(int s, int r) {   
+        Card(int s, int r) {    // card constructor 
             suit = s;
             rank = r;
         }
 
-        public String rankString() {
+        public String rankString() {  // this method returns  as string the value of ranks element at position rank
           return ranks[rank];
         }
 
-        public String suitString() {
+        public String suitString() {   // this method returns as string the value of suits element  at position suit
           return suits[suit] + "";
         }
 
@@ -86,32 +86,116 @@ public class Main {
 		    continue;
           }
 
-		  Card card = new Card(s, r);
+		  Card card = new Card(s, r); // card object storing valid user inputs
 		  hand.add(card);
         }
         Collections.sort(hand, Comparator.comparing(c -> c.rank));   // best Java 8 feature!
         return hand;
-    }
+    	}
 	
 	static String value(List<Card> hand) {  // this method evaluates the "hand" 5 - the cards
         boolean straight = true;
         boolean flush = true;
         
         for (int i = 1; i < hand.size(); i++) {   
-            straight &= hand.get(i - 1).rank + 1 == hand.get(i).rank;  //  looping to for checking rank
-        }  
-        for (int i = 1:i < hand.size();i++){  
-            flush &= hand.get(i - 1).suit == hand.get(i).suit;  // looping for checking suit
+            straight &= hand.get(i - 1).rank + 1 == hand.get(i).rank;  
+            flush &= hand.get(i - 1).suit == hand.get(i).suit;  
         }
-	
-}
-	
-	
+        // straight flush and a royal flush
+        if (straight && flush) {
+            Card highestCard = hand.get(4);
+            if (highestCard.rankString() == "A") {
+              return "Royal flush in " + highestCard.suitString();
+            }
+            return "Straight Flush from " + highestCard;
+        }
+
+        List<Run> runs = findRuns(hand);  
+        
+        runs.sort(Comparator.comparing(r -> -r.rank));
+        runs.sort(Comparator.comparing(r -> -r.length));
+
+
+        // four of a kind
+        if (runs.get(0).length == 4) {
+            return "Four of a Kind: " + runs;
+        }
+
+        if (runs.get(0).length == 3 && runs.get(1).length == 2) {
+            return "Full House: " + runs;
+        }
+
+        if (flush) {
+            return "Flush!";
+        }
+
+        if (straight) {
+            return "Straight from " + hand.get(4);
+        }
+
+        if (runs.get(0).length == 3) {
+            return "Three of a Kind: " + runs;
+        }
+
+        if (runs.get(1).length == 2) {
+            return "Two pair: " + runs;
+        }
+
+        if (runs.get(0).length == 2) {
+            return "Pair: " + runs;
+        }
+
+        return "High card: " + runs;
+    	}
+        
+       
+	static class Run {    // a nested class with method returning a value of rank from ranks array
+        int length;
+        int rank;
+
+        @Override
+        public String toString() {
+            return ranks[rank];
+        	}
+    	}
+    	
+    	static List<Run> findRuns(List<Card> hand) {       
+        List<Run> runs = new ArrayList<>();  
+        Run run = null;
+        for (Card c : hand) {    
+            if (run != null && run.rank == c.rank) {
+                run.length++;
+            } else {
+                run = new Run();
+                runs.add(run);
+                run.rank = c.rank;
+                run.length = 1;
+            }
+        }
+        System.out.println("all runs: " + runs);
+        return runs;
+    	}
+    	
+    	
+    	static void runTest(String cardString) {
+	      	List<String> inputCards = Arrays.asList(cardString.split(" "));
+	      	List<Card> hand = buildHand(inputCards);
+	      	System.out.println("Test: value(\"" + hand + "\") = " + value(hand));
+    	}
+
+    	static void runTests() {  // ran these tests manually by inputting, one by the values in brackets
+	      	System.out.println("Running tests:");
+	      	runTest("AH KH QH JH TH"); 
+	      	runTest("2H JS JS QH KS");
+	      	runTest("2H KH 4H JH TH");
+	      	runTest("AS TC TH 3D 3S");
+	      	System.out.println("DONE!");
+    	}
 	
 	public static void main(String[] args) {
 		System.out.println("Please enter your cards (one by one): ");
 		List<String> inputCards = getCardsFromInput();
-		//runTests();
+		runTests();
 	}
 }
  
