@@ -18,15 +18,15 @@ public class Main {
 
 	
 	//this indexOf method is useful for suits	
-    public static int indexOf(char[] haystack, char needle)     // same method but different arguments
-    {
+    	public static int indexOf(char[] haystack, char needle)     // same method but different arguments
+    		{
         for (int i=0; i<haystack.length; i++)     
         {
             if (haystack[i] == needle) return i;
         }
 
         return -1;
-    }
+    	}
   
 
 	// this method is for getting and validating user input
@@ -93,6 +93,18 @@ public class Main {
         return hand;
     }
 	
+	static String value(List<Card> hand) {  // this method evaluates the "hand" 5 - the cards
+        boolean straight = true;
+        boolean flush = true;
+        
+        for (int i = 1; i < hand.size(); i++) {   
+            straight &= hand.get(i - 1).rank + 1 == hand.get(i).rank;  //  looping to for checking rank
+        }  
+        for (int i = 1:i < hand.size();i++){  
+            flush &= hand.get(i - 1).suit == hand.get(i).suit;  // looping for checking suit
+        }
+	
+}
 	
 	
 	
