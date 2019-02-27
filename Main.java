@@ -15,8 +15,12 @@ public class Main {
           // "2H", "AS"
           System.out.println("Invalid card: " + cardString);
           continue;
-        }
-
-
- }
+        		}
+	
+		}
+	return inputCards;
+	}
+	
+}
+ 
 
