@@ -6,8 +6,10 @@ About this solution: This program will accept text input (of playing  Poker game
  
 Assumptions made:
 
-1. Not accounting for ace-to-five low rules
-
+0. User will input the card one at the time
+1. The card 10 is assumed to be T - so for 10S (10 of spades)  == TS
+2. Not accounting for ace-to-five low rules
+3.
 
 
 Steps:
@@ -15,9 +17,9 @@ Steps:
 1. Get the necessary  Java library  imports
 2. Get  input from user  
 3. Account for the validity of the  text input   
-    3.1 Use of try/catch statement or the exception class or assert statements
-4. Define suits and values [arrays/enums/arraylist] and populate with the constant poker values equivalents
-    4.1 Ensure looping though each suits/value [arraylist/enum] to determine comparisons for ranks 
+    3.1 Use of conditional statements for checking the validity
+4. Define suits and values as arrays and populate with the constant poker values equivalents
+    4.1 Ensure looping though each suits and each value in  an array to determine comparisons for ranks
 5. Store the text input as a compatible type for comparison with the 
   5.1 Find a way to split this string such that values for the suit and values become accessible
 
