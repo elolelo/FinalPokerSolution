@@ -1,5 +1,6 @@
 import java.util.*;
 public class Main { 
+// constants
     static final char[] suits = {'H', 'D', 'C', 'S'};  
     static final String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"}; 
 
@@ -14,7 +15,7 @@ public class Main {
 // read all the cards from input
         while (inputCards.size() < 5) {
         String cardString = sc.nextLine();
-        System.out.println("Enter another card: " + cardString);
+        System.out.println("Enter another card: ");
 
         if (cardString.length() != 2) {
           // "2H", "AS"
@@ -23,7 +24,7 @@ public class Main {
         }
       
         String sRank = cardString.charAt(0) + "";  // this will read the number first as rank
-        char cSuit = cardString.charAt(1);  // this will read the suit last
+        char cSuit = cardString.charAt(1);  // this will read the suit after the rank
         int r = indexOf(ranks, sRank);
         int s = indexOf(suits, cSuit);
 
@@ -67,9 +68,9 @@ public class Main {
     
   // this method generates a "deck" using the constant ranks and suits
     public static List<Card> generateDeck() {  
-        List<Card> deck = new ArrayList<>();    // this List collection is for suits comparison - its name is Deck and from type Type
-        for (int s = 0; s < suits.length; s++) {  // for all the suit
-            for (int r = 0; r < ranks.length; r++) {  // in all the number on the card
+        List<Card> deck = new ArrayList<>();    // this is for suits and ranks  comparisons 
+        for (int s = 0; s < suits.length; s++) {  // for the suit
+            for (int r = 0; r < ranks.length; r++) {  // for the rank
                 deck.add(new Card(s,r));      // this line creates  a new object of type Card!
             }
         }
@@ -117,7 +118,7 @@ public class Main {
     static List<Card> buildHand(List<String> cardStrings) {  
       List<Card> hand = new ArrayList<Card>();    // this arraylist is for the comparison
       for (String cardString : cardStrings) {
-          String sRank = cardString.charAt(0) + "";
+          String sRank = cardString.charAt(0) + " ";
           char cSuit = cardString.charAt(1);
           int r = indexOf(ranks, sRank);
           int s = indexOf(suits, cSuit);
@@ -185,9 +186,9 @@ public class Main {
         if (straight && flush) {
             Card highestCard = hand.get(4);
             if (highestCard.rankString() == "A") {
-              return "Royal flush in " + highestCard.suitString();
+              return "Royal flush!" ; // in " + highestCard.suitString();
             }
-            return "Straight Flush from " + highestCard;
+            return "Straight Flush!"; // from  + highestCard;
         }
 
         List<Run> runs = findRuns(hand);
@@ -198,11 +199,11 @@ public class Main {
 
         // four of a kind
         if (runs.get(0).length == 4) {
-            return "Four of a Kind= " + runs;
+            return "Four of a Kind! = " ;
         }
 
         if (runs.get(0).length == 3 && runs.get(1).length == 2) {
-            return "Full House= " + runs;
+            return "Full House! = " ;
         }
 
         if (flush) {
@@ -210,22 +211,22 @@ public class Main {
         }
 
         if (straight) {
-            return "Straight from " + hand.get(4);
+            return "Straight !" ;
         }
 
         if (runs.get(0).length == 3) {
-            return "Three of a Kind= " + runs;
+            return "Three of a Kind! = ";
         }
 
         if (runs.get(1).length == 2) {
-            return "Two pair= " + runs;
+            return "Two pair! = ";
         }
 
         if (runs.get(0).length == 2) {
-            return "Pair= " + runs;
+            return "Pair! = ";
         }
 
-        return "High card= " + runs;
+        return "High card!  ";
     }
 
     /** Nested class represents {@code length} cards of rank {@code rank} */
@@ -257,14 +258,14 @@ public class Main {
     }
     
     public static void main(String[] args) { 
-       /* System.out.println("Please enter your cards (one by one) in Uppercase: ");
+        System.out.println("Please enter your cards (one by one) in Uppercase - Each ending with the suit e.g 2D: ");
         List<String> inputCards = getCardsFromInput();
         
         List<Card> hand = buildHand(inputCards);   
         System.out.println("Your hand is: " + hand);
-        System.out.println("The best poker Hand constructed is: " + value(hand));  */
+        System.out.println("The best poker Hand constructed is: " + value(hand));  
 
-        runTests();
+        //runTests();
 
     }
 }
