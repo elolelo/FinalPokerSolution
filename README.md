@@ -15,7 +15,9 @@ Assumptions made:
 
 3. This program is case -sensitive. Enter Upper cases only
 
-4. Not accounting for ace-to-five low rules
+4. Only a valid hand (5 cards out of the 52 by 13 ) will be inputted, mock input like a hand such as 2D,2D,2H,2S,2C will not be accounted for.
+
+5. Not accounting for ace-to-five low rules
 
 
 Steps:
