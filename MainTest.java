@@ -77,8 +77,8 @@ public class MainTest {
 	
 	@Test
 	public void testValue() {
-		//fail("Not yet implemented"); // TODO
-		//Should test all cases: Full House, Flush, etc
+		List<Main.Card> deck = Main.generateHand();
+		assertEquals(" Flush", Main.value(deck));
 	}
 
 	@Test
