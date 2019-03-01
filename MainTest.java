@@ -79,13 +79,24 @@ public class MainTest {
 	public void testValue() {
 		List<Main.Card> deck = Main.generateHand();
 		assertEquals("Straight Flush from H6", Main.value(deck));
-		//TO-DO - test all other hands
+		//TO-DO later - test all other hands
 	}
 
 	@Test
 	public void testFindRuns() {
-		//fail("Not yet implemented"); // TODO
-		//Should test all cases (hands): Full House, Flush, etc
+		List<Main.Card> hand = Main.generateHand();
+		List<Main.Run> runs = new ArrayList<>();
+		runs.add(new Main.Run(1));
+		runs.add(new Main.Run(2));
+		runs.add(new Main.Run(3));
+		runs.add(new Main.Run(4));
+		runs.add(new Main.Run(5));
+		
+		List<Main.Run> rRuns = Main.findRuns(hand);
+		System.out.println(rRuns);
+		System.out.println(runs);
+		assertEquals(runs.get(0).toString(), rRuns.get(0).toString());
+		//To Do later - Should test all cases (hands): Full House, Flush, etc
 	}
 
 }
