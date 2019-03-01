@@ -134,9 +134,6 @@ public class Main {
 	        flush &= hand.get(i - 1).suit == hand.get(i).suit;
 	    }
 
-	    // TODO: add a royal flush
-
-
 	    // straight flush
 	    if (straight && flush) {
 	        Card highestCard = hand.get(4);
