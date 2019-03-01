@@ -36,7 +36,9 @@ public class MainTest {
 
 	@Test
 	public void testGenerateHand() {
-		//fail("Not yet implemented"); // TODO
+		List<Main.Card> deck = Main.generateHand();
+		assertEquals(6,deck.size());
+		
 	}
 
 	@Test
