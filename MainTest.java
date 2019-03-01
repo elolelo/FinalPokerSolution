@@ -78,13 +78,14 @@ public class MainTest {
 	@Test
 	public void testValue() {
 		List<Main.Card> deck = Main.generateHand();
-		assertEquals(" Flush", Main.value(deck));
+		assertEquals("Straight Flush from H6", Main.value(deck));
+		//TO-DO - test all other hands
 	}
 
 	@Test
 	public void testFindRuns() {
 		//fail("Not yet implemented"); // TODO
-		//Should test all cases: Full House, Flush, etc
+		//Should test all cases (hands): Full House, Flush, etc
 	}
 
 }
