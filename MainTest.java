@@ -19,7 +19,8 @@ public class MainTest {
 
 	@Test
 	public void testIndexOfTArrayT() {
-		//fail("Not yet implemented"); // TODO
+		String[] array = new String[] {"a", "b", "c", "d"};
+		assertEquals(6, Main.indexOf(array, "b"));
 	}
 
 	@Test
