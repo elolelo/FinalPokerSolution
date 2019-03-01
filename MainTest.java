@@ -37,7 +37,7 @@ public class MainTest {
 	@Test
 	public void testGenerateHand() {
 		List<Main.Card> deck = Main.generateHand();
-		assertEquals(6,deck.size());
+		assertEquals(5,deck.size());
 		
 	}
 
