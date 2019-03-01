@@ -25,7 +25,8 @@ public class MainTest {
 
 	@Test
 	public void testIndexOfCharArrayChar() {
-		//fail("Not yet implemented"); // TODO
+		String chars = "abcd";
+		assertEquals(0, Main.indexOf(chars.toCharArray(), 'b'));
 	}
 
 	@Test
