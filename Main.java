@@ -126,17 +126,10 @@ public class Main {
 	    Collections.sort(hand, Comparator.comparing(c -> c.rank));   // this statement 
 	    return hand;
 	}
-
-	static void runTest(String cardString) {
-	  List<String> inputCards = Arrays.asList(cardString.split(" "));
-	  List<Card> hand = buildHand(inputCards);
-	  System.out.println("Test: value(\"" + hand + "\") = " + value(hand));
-	}
-
 	static String value(List<Card> hand) {  // this method   
 	    boolean straight = true;
 	    boolean flush = true;
-	    for (int i = 1; i < hand.size(); i++) {  // this part buffles me.
+	    for (int i = 1; i < hand.size(); i++) {  
 	        straight &= hand.get(i - 1).rank + 1 == hand.get(i).rank;
 	        flush &= hand.get(i - 1).suit == hand.get(i).suit;
 	    }
