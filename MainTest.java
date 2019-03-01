@@ -26,7 +26,7 @@ public class MainTest {
 	@Test
 	public void testIndexOfCharArrayChar() {
 		String chars = "abcd";
-		assertEquals(0, Main.indexOf(chars.toCharArray(), 'b'));
+		assertEquals(1, Main.indexOf(chars.toCharArray(), 'b'));
 	}
 
 	@Test
