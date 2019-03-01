@@ -51,7 +51,7 @@ public class MainTest {
 	@Test
 	public void testBuildHand() {
 		List<String> strings = new ArrayList();
-		strings.add("10H");
+		strings.add("TH");
 		strings.add("3D");
 		strings.add("4D");
 		strings.add("5D");
