@@ -70,19 +70,13 @@ public class Main {
         return deck;
     }
 	
-	
-	
-	
-	
-	
-
 
 	public static List<Card> generateHand() {  
 	    List<Card> deck = generateDeck();
 	    return deck.subList(0,5);
 	}
 
-	static class Card {      // This is a data type for  other collections
+	public static class Card {      // This is a data type for  other collections
 	    final int suit;
 	    final int rank;
 
@@ -184,7 +178,13 @@ public class Main {
 	static class Run {   
 	    int length;
 	    int rank;
-
+	    
+	    Run(){}
+	    
+	    Run(int rank) {
+	    	this.rank = rank;
+	    }
+	    
 	    @Override
 	    public String toString() {
 	        return ranks[rank];
@@ -208,7 +208,6 @@ public class Main {
 	    return runs;
 	}
 	
-
 	public static void main(String[] args) {
 	    System.out.println("Please enter your cards (one by one) in Uppercase - Each ending with the suit e.g 2D: ");
 	    List<String> inputCards = getCardsFromInput();
