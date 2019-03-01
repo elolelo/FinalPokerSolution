@@ -45,7 +45,7 @@ public class MainTest {
 
 	@Test
 	public void testGetCardsFromInput() {
-		//fail("Not yet implemented"); // TODO
+		//manually tested using the user input
 	}
 
 	@Test
