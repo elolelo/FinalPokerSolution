@@ -86,11 +86,11 @@ public class MainTest {
 	public void testFindRuns() {
 		List<Main.Card> hand = Main.generateHand();
 		List<Main.Run> runs = new ArrayList<>();
-		runs.add(new Main.Run(1));
 		runs.add(new Main.Run(2));
 		runs.add(new Main.Run(3));
 		runs.add(new Main.Run(4));
 		runs.add(new Main.Run(5));
+		runs.add(new Main.Run(6));
 		
 		List<Main.Run> rRuns = Main.findRuns(hand);
 		System.out.println(rRuns);
