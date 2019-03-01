@@ -51,11 +51,12 @@ public class MainTest {
 	@Test
 	public void testBuildHand() {
 		List<String> strings = new ArrayList();
-		strings.add("D2");
-		strings.add("D3");
-		strings.add("D4");
-		strings.add("D5");
-		strings.add("D6");
+		strings.add("2D");
+		strings.add("3D");
+		strings.add("4D");
+		strings.add("5D");
+		strings.add("6D");
+		
 		
 
 		List<String> expectedStrings = new ArrayList();
