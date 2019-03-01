@@ -31,7 +31,7 @@ public class MainTest {
 	public void testGenerateDeck() {
 		//fail("Not yet implemented"); // TODO
 		List<Main.Card> deck = Main.generateDeck();
-		assertEquals(55,deck.size());
+		assertEquals(52,deck.size());
 	}
 
 	@Test
