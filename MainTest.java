@@ -20,7 +20,7 @@ public class MainTest {
 	@Test
 	public void testIndexOfTArrayT() {
 		String[] array = new String[] {"a", "b", "c", "d"};
-		assertEquals(0, Main.indexOf(array, "b"));
+		assertEquals(1, Main.indexOf(array, "b"));
 	}
 
 	@Test
