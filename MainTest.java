@@ -50,7 +50,28 @@ public class MainTest {
 
 	@Test
 	public void testBuildHand() {
-		//fail("Not yet implemented"); // TODO
+		List<String> strings = new ArrayList();
+		strings.add("10H");
+		strings.add("3D");
+		strings.add("4D");
+		strings.add("5D");
+		strings.add("6D");
+		
+
+		List<String> expectedStrings = new ArrayList();
+		expectedStrings.add("D2");
+		expectedStrings.add("D3");
+		expectedStrings.add("D4");
+		expectedStrings.add("D5");
+		expectedStrings.add("D6");
+		
+		List<Main.Card> hand = Main.buildHand(strings);
+		
+		assertEquals(expectedStrings.get(0), hand.get(0).toString());
+		assertEquals(expectedStrings.get(1), hand.get(1).toString());
+		assertEquals(expectedStrings.get(2), hand.get(2).toString());
+		assertEquals(expectedStrings.get(3), hand.get(3).toString());
+		assertEquals(expectedStrings.get(4), hand.get(4).toString());
 	}
 	
 	@Test
